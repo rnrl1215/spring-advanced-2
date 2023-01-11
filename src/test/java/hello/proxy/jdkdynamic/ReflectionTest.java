@@ -44,6 +44,29 @@ public class ReflectionTest {
         log.info("result2={}", result2);
     }
 
+    // 리플렉션은 런타임에 오류가 발생하기 때문에 컴파일 시점에서 오류를 잡을 수 없는 단점이 있다.
+    @Test
+    void reflection2() throws Exception {
+        // 클래스 정보
+        Class classHello = Class.forName("hello.proxy.jdkdynamic.ReflectionTest$Hello");
+
+        Hello target = new Hello();
+
+        //Call
+        Method methodCallA = classHello.getMethod("callA");
+        dynamicCall(methodCallA, target);
+
+        //Call
+        Method methodCallB = classHello.getMethod("callB");
+        dynamicCall(methodCallB, target);
+    }
+
+    private void dynamicCall(Method method, Object target) throws Exception {
+        log.info("start");
+        Object result = method.invoke(target);
+        log.info("result={}", result);
+    }
+
 
     @Slf4j
     static class Hello {
