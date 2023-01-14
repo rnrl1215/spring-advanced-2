@@ -4,11 +4,9 @@ package hello.proxy.config.v2_dynamicproxy;
 import hello.proxy.app.v1.*;
 import hello.proxy.config.v2_dynamicproxy.handler.LogTraceBasicHandler;
 import hello.proxy.trace.logtrace.LogTrace;
-import lombok.extern.java.Log;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.swing.plaf.SpinnerUI;
 import java.lang.reflect.Proxy;
 
 @Configuration
