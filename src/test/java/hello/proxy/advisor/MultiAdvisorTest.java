@@ -36,7 +36,6 @@ public class MultiAdvisorTest {
         proxy2.save();
     }
 
-
     @Test
     @DisplayName("여러 프록시")
     void multiAdvisorTest2() {
