@@ -17,6 +17,7 @@ public class BaiscTest {
         A a= applicationContext.getBean("beanA", A.class);
         a.helloA();
 
+
         //B 는 빈으로 등록되지 않는다.
         Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> applicationContext.getBean(B.class));
     }
