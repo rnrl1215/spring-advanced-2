@@ -29,7 +29,8 @@ public class AutoProxyConfig {
     public Advisor advisor2(LogTrace logTrace) {
         //point cut
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
-        pointcut.setExpression("execution(* hello.proxy.app..*(..))");
+//        pointcut.setExpression("execution(* hello.proxy.app..*(..)) && !execution(* hello.proxy.app..noLog())");
+        pointcut.setExpression("execution(* hello.proxy.app..*(..)) && !execution(* hello.proxy.app..noLog())");
 
         // advice
         LogTraceAdvice advice = new LogTraceAdvice(logTrace);
